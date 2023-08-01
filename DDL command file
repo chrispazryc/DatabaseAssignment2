@@ -77,7 +77,7 @@ create table parts_has_product (
 
   parts_parts_number      int        not null,
   product_product_code    int        not null,
-  constraint              PhPPK      primary key(parts_parts_number, product_product_code),
+  constraint                         primary key(parts_parts_number, product_product_code),
   constraint              PhPFK1     foreign key (parts_parts_number)
                               references parts(parts_number)
                               on update no action
@@ -93,7 +93,7 @@ create table parts_has_product (
 
 create table line_item (
 
-  line_number               int    not null primary key,
+  line_number               int    not null,
   quantity_orders           int    not null,
   quantity_backordersed     int    null,
   quantity_fulfilled        int    null,
@@ -101,20 +101,20 @@ create table line_item (
   orders_customer_id        int    not null,
   orders_invoice_id         int    not null,
   product_product_code      int    not null,
-  constraint               LIPK   primary key(orders_orders_id, line_number),
-  constraint               LIFK1  foreign key (orders_orders_id)
+  constraint                       primary key(orders_orders_id, line_number),
+  constraint               LIFK1   foreign key (orders_orders_id)
                               references orders(orders_id)
                               on update no action
                               on delete cascade,
-  constraint               LIFK2  foreign key (orders_customer_id)
+  constraint               LIFK2   foreign key (orders_customer_id)
                               references customer(customer_id)
                               on update no action
                               on delete cascade,
-  constraint               LIFK3  foreign key (orders_invoice_id)
+  constraint               LIFK3   foreign key (orders_invoice_id)
                               references invoice(invoice_id)
                               on update no action
                               on delete cascade,  
-  constraint               LIFK4  foreign key (product_product_code)
+  constraint               LIFK4   foreign key (product_product_code)
                               references product(product_code)
                               on update no action
                               on delete cascade
