@@ -1,0 +1,29 @@
+-- File Authors:
+-- Christina Paz
+-- Irving Octavio Medrano Flores
+-- Alan Scollon
+
+-- File Description:
+-- This file queries the database for a variety of information.
+
+-- 1. A simple query that pulls all columns and rows from a table 
+
+-- 2. A query that displays a subset of columns 
+
+-- 3. A query that displays a subset of columns with a single clause (predicate) WHERE statement 
+
+-- 4. A query that displays a subset of columns with a multi-clause (predicate) WHERE statement using AND/OR 
+
+-- 5. A query that performs a single table join. In other words, you are joining 2 tables. 
+
+-- 6. A query that performs a multi-table join. In other words, you are joining 3 or more tables. 
+
+-- 7. A query that performs an aggregate (count, min, max, sum, avg, etc.). 
+
+-- 8. A query that performs an aggregate (count, min, max, sum, avg, etc.) with a GROUP BY. 
+
+-- 9. A query that performs an aggregate (count, min, max, sum, avg, etc.). with a GROUP BY and a HAVING clause 
+
+-- 10. A query that performs a subquery either as part of the WHERE clause or as a derived/virtual table. 
+
+-- 11. A query that performs an aggregate with a join and a group by.
