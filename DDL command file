@@ -41,3 +41,13 @@ create table product (
   product_inventory_quantity    int          not null
 
 );
+
+-- Creates the Parts table
+
+create table parts (
+
+  parts_number                int            not null primary key,
+  parts_description           varchar(50)    not null,
+  parts_inventory_quantity    int            not null
+
+);
