@@ -5,3 +5,114 @@
 
 -- File Description:
 -- This file populates the database with test data gotten from generatedata.com.
+
+-- Inserting Customer data from generatedata.com
+
+INSERT INTO customer (`customer_id`,`customer_name`,`mailing_address`,`shipping_address`,`discount`,`credit_limit`,`phone_number`)
+VALUES
+  (1,"Harriet Dixon","3284 Consectetuer, St.","Ap #233-3756 Adipiscing. Road",2,3938,"1-555-631-9127"),
+  (2,"Emery Snider","1843 Curae Street","Ap #886-6041 Nascetur Rd.",2,1463,"1-540-665-1636"),
+  (3,"Justina Hanson","951-6756 Varius Rd.","6648 Duis Ave",3,4526,"(466) 906-2866"),
+  (4,"Silas Peterson","P.O. Box 778, 2246 Odio. Avenue","628-6715 Sociis Av.",5,3512,"1-555-662-2176"),
+  (5,"Amir Hoover","P.O. Box 462, 9127 Aliquam Av.","218-6592 Libero. Av.",6,4099,"(274) 577-6047");
+
+-- Inserting Invoice data from generatedata.com
+
+INSERT INTO invoice (`invoice_id`,`invoice_total`,`invoice_discount`,`amount_owed`)
+VALUES
+  (1,"$1,597.52","$25.22","$1330.92"),
+  (2,"$2,087.54","$59.02","$2844.13"),
+  (3,"$2,748.21","$50.79","$3954.73"),
+  (4,"$887.98","$23.53","$3516.48"),
+  (5,"$3,870.89","$84.71","$3969.08");
+
+-- Inserting Product data from generatedata.com
+
+INSERT INTO product (`product_code`,`product_description`,`product_inventory_quantity`)
+VALUES
+  (1,"quam. Pellentesque habitant",37),
+  (2,"sit amet, consectetuer adipiscing elit.",67),
+  (3,"Nulla semper tellus id",60),
+  (4,"ornare, facilisis eget,",65),
+  (5,"Nam",94),
+  (6,"egestas ligula. Nullam feugiat placerat",96),
+  (7,"quis, tristique",69),
+  (8,"aliquet,",73),
+  (9,"lacus pede sagittis",58),
+  (10,"lorem vitae odio sagittis",41);
+
+-- Inserting Parts data from generatedata.com
+
+INSERT INTO parts (`parts_number`,`parts_description`,`parts_inventory_quantity`)
+VALUES
+  (1,"justo. Praesent luctus. Curabitur",84),
+  (2,"in, dolor. Fusce feugiat.",97),
+  (3,"tellus lorem eu metus. In",78),
+  (4,"feugiat non, lobortis quis,",22),
+  (5,"semper cursus. Integer mollis.",87),
+  (6,"Cum sociis natoque penatibus",69),
+  (7,"arcu. Sed eu",36),
+  (8,"Donec consectetuer mauris id sapien.",62),
+  (9,"nisl. Maecenas malesuada fringilla",93),
+  (10,"eros. Proin ultrices. Duis",88);
+
+-- Inserting Orders data from generatedata.com
+
+INSERT INTO orders (`orders_id`,`orders_date`,`customer_customer_id`,`invoice_invoice_id`)
+VALUES
+  (1,"Apr 18, 2023",3,1),
+  (2,"Jan 10, 2023",3,2),
+  (3,"Aug 20, 2023",3,3),
+  (4,"Dec 24, 2022",4,4),
+  (5,"Dec 25, 2022",1,5);
+
+-- Inserting Parts_Has_Product data from generatedata.com
+
+INSERT INTO parts_has_product (`parts_parts_number`,`product_product_code`)
+VALUES
+  (9,9),
+  (4,10),
+  (9,1),
+  (9,7),
+  (2,4),
+  (3,2),
+  (7,8),
+  (5,5),
+  (4,6),
+  (10,7),
+  (2,3),
+  (6,5),
+  (1,5),
+  (8,2),
+  (4,8);
+
+
+-- Inserting Line_Item data from generatedata.com
+
+INSERT INTO line_item (`line_number`,`quantity_ordered`,`quantity_backordered`,`quantity_fulfilled`,`orders_orders_id`,`orders_customer_id`,`orders_invoice_id`,`product_product_code`)
+VALUES
+  (1,3,9,51,1,4,1,8),
+  (2,87,6,85,1,3,1,6),
+  (3,66,1,68,1,3,1,4),
+  (4,73,5,93,1,4,1,2),
+  (5,1,9,31,1,2,1,9),
+  (1,96,2,17,2,5,2,8),
+  (2,11,8,26,2,2,2,9),
+  (3,34,2,58,2,4,2,3),
+  (4,13,6,68,2,4,2,7),
+  (5,54,1,75,2,2,2,7),
+  (1,74,0,61,3,3,3,5),
+  (2,17,7,53,3,1,3,4),
+  (3,54,3,34,3,2,3,5),
+  (4,10,4,56,3,4,3,6),
+  (5,93,10,27,3,2,3,2),
+  (1,37,8,98,4,2,4,8),
+  (2,19,8,82,4,2,4,3),
+  (3,48,5,67,4,2,4,4),
+  (4,59,0,39,4,2,4,2),
+  (5,67,9,6,4,3,4,8),
+  (1,95,0,41,5,2,5,5),
+  (2,21,3,99,5,2,5,2),
+  (3,55,8,20,5,4,5,9),
+  (4,21,3,27,5,1,5,2),
+  (5,71,10,6,5,5,5,3);
