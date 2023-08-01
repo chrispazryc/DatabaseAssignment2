@@ -70,3 +70,21 @@ create table order (
                               on delete cascade,
 
 );
+
+-- Creates the Parts_has_Product table
+
+create table parts_has_product (
+
+  parts_parts_number      int        not null,
+  product_product_code    int        not null,
+  constraint              PhPPK      primary(parts_parts_number, product_product_code),
+  constraint              PhPFK1     foreign key (parts_parts_number)
+                              references parts(parts_number)
+                              on update no action
+                              on delete cascade,
+  constraint              PhPFK2     foreign key (product_product_code)
+                              references product(product_code)
+                              on update no action
+                              on delete cascade
+
+);
