@@ -7,10 +7,20 @@
 -- This file queries the database for a variety of information.
 
 -- 1. A simple query that pulls all columns and rows from a table 
+select * from customer;
 
 -- 2. A query that displays a subset of columns 
+select  product_description         AS "Product",  
+        product_inventory_quantity  AS "Number in Inventory" 
+from product;
 
 -- 3. A query that displays a subset of columns with a single clause (predicate) WHERE statement 
+select 	line_number           AS "Line", 
+		    product_product_code  AS "Product Code", 
+		    quantity_fulfilled    AS "Quantity Fulfilled", 
+        orders_orders_id      AS "Order Number" 
+from line_item 
+where orders_orders_id = 2;
 
 -- 4. A query that displays a subset of columns with a multi-clause (predicate) WHERE statement using AND/OR 
 
