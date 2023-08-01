@@ -94,8 +94,8 @@ create table parts_has_product (
 create table line_item (
 
   line_number               int    not null,
-  quantity_orders           int    not null,
-  quantity_backordersed     int    null,
+  quantity_ordered          int    not null,
+  quantity_backordered      int    null,
   quantity_fulfilled        int    null,
   orders_orders_id          int    not null,
   orders_customer_id        int    not null,
