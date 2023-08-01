@@ -31,3 +31,13 @@ create table invoice (
   amount_owed         decimal(50)    not null
 
 );
+
+-- Creates the Product table
+
+create table product (
+
+  product_code                  int          not null primary key,
+  product_description           varchar(50)  not null,
+  product_inventory_quantity    int          not null
+
+);
