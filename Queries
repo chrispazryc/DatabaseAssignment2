@@ -23,8 +23,16 @@ from line_item
 where orders_orders_id = 2;
 
 -- 4. A query that displays a subset of columns with a multi-clause (predicate) WHERE statement using AND/OR 
+select 	orders_id AS "Order ID",
+		orders_date AS "Date of Order",
+        customer_customer_id AS "Cusotmer ID"
+from orders
+where 		customer_customer_id = 1 
+		OR 	customer_customer_id = 4;
 
 -- 5. A query that performs a single table join. In other words, you are joining 2 tables. 
+
+
 
 -- 6. A query that performs a multi-table join. In other words, you are joining 3 or more tables. 
 
