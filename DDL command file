@@ -77,12 +77,44 @@ create table parts_has_product (
 
   parts_parts_number      int        not null,
   product_product_code    int        not null,
-  constraint              PhPPK      primary(parts_parts_number, product_product_code),
+  constraint              PhPPK      primary key(parts_parts_number, product_product_code),
   constraint              PhPFK1     foreign key (parts_parts_number)
                               references parts(parts_number)
                               on update no action
                               on delete cascade,
   constraint              PhPFK2     foreign key (product_product_code)
+                              references product(product_code)
+                              on update no action
+                              on delete cascade
+
+);
+
+-- Creates the Line_Item table
+
+create table line_item (
+
+  line_number              int    not null primary key,
+  quantity_order           int    not null,
+  quantity_backordered     int    null,
+  quantity_fulfilled       int    null,
+  order_order_id           int    not null,
+  order_customer_id        int    not null,
+  order_invoice_id         int    not null,
+  product_product_code     int    not null,
+  constraint               LIPK   primary key(order_order_id, line_number),
+  constraint               LIFK1  foreign key (order_order_id)
+                              references order(order_id)
+                              on update no action
+                              on delete cascade,
+  constraint               LIFK2  foreign key (order_customer_id)
+                              references order(customer_id)
+                              on update no action
+                              on delete cascade,
+  constraint               LIFK3  foreign key (order_invoice_id)
+                              references order(invoice_id)
+                              on update no action
+                              on delete cascade,  
+  constraint               LIFK4  foreign key (product_product_code)
                               references product(product_code)
                               on update no action
                               on delete cascade
