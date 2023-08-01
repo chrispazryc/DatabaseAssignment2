@@ -32,12 +32,24 @@ where 		customer_customer_id = 1
 	OR 	customer_customer_id = 4;
 
 -- 5. A query that performs a single table join. In other words, you are joining 2 tables. 
-
-
+SELECT 	*
+FROM 	parts, parts_has_product
+where 	parts.parts_number = parts_has_product.parts_parts_number;
 
 -- 6. A query that performs a multi-table join. In other words, you are joining 3 or more tables. 
+SELECT 	parts.parts_description 	AS "Part",
+	product.product_description	AS "Product",
+        parts_inventory_quantity 	AS "Part Quantity",
+        product_inventory_quantity 	AS "Product Quantity"
+FROM 	parts, 
+	parts_has_product, 
+	product
+where 		parts.parts_number 	= parts_has_product.parts_parts_number 
+	AND	product.product_code 	= parts_has_product.product_product_code;
 
 -- 7. A query that performs an aggregate (count, min, max, sum, avg, etc.). 
+select 	sum(product_inventory_quantity) AS "Total Inventory"
+from	product;
 
 -- 8. A query that performs an aggregate (count, min, max, sum, avg, etc.) with a GROUP BY. 
 
