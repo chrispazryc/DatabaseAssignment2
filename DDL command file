@@ -5,3 +5,18 @@
 
 -- File Description:
 -- This file creates the tables and constraints including primary keys, foreign keys, and check constraints.
+
+
+-- Creates the Customer table
+
+create table customer (
+
+  customer_id         int           not null primary key,
+  customer_name       varchar(50)   not null,
+  mailing_address     varchar(100)  not null,
+  shipping_address    varchar(100)  null,
+  discount            decimal(6)    null,
+  credit_limit        decimal(50)   not null,
+  phone_number        varchar(25)   not null
+
+);
