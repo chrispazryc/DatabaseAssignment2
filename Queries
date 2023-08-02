@@ -67,3 +67,11 @@ having		count(parts_parts_number) > 1;
 -- 10. A query that performs a subquery either as part of the WHERE clause or as a derived/virtual table. 
 
 -- 11. A query that performs an aggregate with a join and a group by.
+select		product.product_description		AS "Product Name",
+		count(parts.parts_number) 		AS "Number of Parts"
+from	 	product 
+			join parts_has_product
+				on product.product_code = parts_has_product.product_product_code
+					join parts
+						on parts_has_product.parts_parts_number = parts.parts_number
+group by 	product_product_code;
