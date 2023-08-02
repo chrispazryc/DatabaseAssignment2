@@ -5,3 +5,24 @@
 
 -- File Description:
 -- This file creates two dynamic views, one for query 4 and one for query 9 from Queries.
+
+
+-- 1. A dynamic view for query 4 in the previous task
+create view 	query_4_view 			    AS
+select 			  orders_id 				    AS "Order ID",
+				      orders_date 			    AS "Date of Order",
+				      customer_customer_id 	AS "Cusotmer ID"
+from 			    orders
+where 			  customer_customer_id = 1 
+			    OR 	customer_customer_id = 4;
+select * from query_4_view;
+
+-- 2. A dynamic view for query 9 in the previous task
+create view 	query_9_view 				        AS
+select			  product_product_code 	    	AS "Product Code",
+				      count(parts_parts_number) 	AS "Number of Parts"
+from	 		    parts_has_product
+group by 		  product_product_code
+having			  count(parts_parts_number) > 1;
+select * from query_9_view;
+
