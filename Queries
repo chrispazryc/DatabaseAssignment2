@@ -52,8 +52,17 @@ select 	sum(product_inventory_quantity) AS "Total Inventory"
 from	product;
 
 -- 8. A query that performs an aggregate (count, min, max, sum, avg, etc.) with a GROUP BY. 
+select		product_product_code 		AS "Product Code",
+		count(parts_parts_number) 	AS "Number of parts"
+from	 	parts_has_product
+group by 	product_product_code;
 
 -- 9. A query that performs an aggregate (count, min, max, sum, avg, etc.). with a GROUP BY and a HAVING clause 
+select		product_product_code 		AS "Product Code",
+		count(parts_parts_number) 	AS "Number of parts"
+from	 	parts_has_product
+group by 	product_product_code
+having		count(parts_parts_number) > 1;
 
 -- 10. A query that performs a subquery either as part of the WHERE clause or as a derived/virtual table. 
 
